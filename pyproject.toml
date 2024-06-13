@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = "LLM-Zoomcamp package"
+authors = ["Khubbatulin Mark markhubbatulin@gmail.com"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^1.34.0"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^4.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

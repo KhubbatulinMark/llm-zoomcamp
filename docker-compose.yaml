@@ -11,3 +11,12 @@ services:
     ports:
       - "8090:8888"
     command: jupyter lab --allow-root --ip 0.0.0.0 --port=8888 --no-browser --notebook-dir=/app --NotebookApp.token=rndbox
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+

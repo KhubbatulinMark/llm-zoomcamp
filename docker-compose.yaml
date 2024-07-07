@@ -4,6 +4,7 @@ services:
   jupyter:
     build:
       context: .
+      dockerfile: images/jupyter-lab/Dockerfile
     env_file:
       - ./.env
     volumes:
@@ -19,4 +20,15 @@ services:
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
+  ollama:
+    build:
+      context: .
+      dockerfile: images/ollama/Dockerfile
+    container_name: ollama
+    volumes:
+      - "./ollama_files:/root/.ollama"
+    ports:
+      - "11434:11434"
 
+volumes:
+  ollama_files:

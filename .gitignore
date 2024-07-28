@@ -163,3 +163,4 @@ cython_debug/
 # Competition data
 competition/data
 ollama_files
+workshops/dlt/.lancedb/

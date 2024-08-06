@@ -162,5 +162,7 @@ cython_debug/
 .idea/
 # Competition data
 competition/data
+competition/result
+
 ollama_files
 workshops/dlt/.lancedb/

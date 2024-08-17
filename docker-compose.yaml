@@ -1,10 +1,10 @@
-version: '3'
+version: '3.9'
 
 services:
   jupyter:
     build:
-      context: .
-      dockerfile: images/jupyter-lab/Dockerfile
+      context: images/jupyter-lab
+      dockerfile: Dockerfile
     env_file:
       - ./.env
     volumes:
@@ -12,6 +12,7 @@ services:
     ports:
       - "8090:8888"
     command: jupyter lab --allow-root --ip 0.0.0.0 --port=8888 --no-browser --notebook-dir=/app --NotebookApp.token=rndbox
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
     ports:
@@ -20,6 +21,7 @@ services:
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
+
   ollama:
     build:
       context: .

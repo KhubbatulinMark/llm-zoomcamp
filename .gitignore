@@ -164,5 +164,7 @@ cython_debug/
 competition/data
 competition/result
 
+.Trash-0
+.file_versions
 ollama_files
 workshops/dlt/.lancedb/
